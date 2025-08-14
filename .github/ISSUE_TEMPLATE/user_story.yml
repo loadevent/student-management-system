@@ -1,0 +1,68 @@
+name: 📚 User Story
+description: Describe a user story to help guide development
+title: "[User Story] "
+labels:
+  - user story
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📚 User Story
+        Please provide details about the user story, including the role, goal, and benefit.
+
+  - type: input
+    id: title
+    attributes:
+      label: Story Title
+      description: A short, descriptive title for this user story.
+      placeholder: "e.g., Allow users to reset their password"
+    validations:
+      required: true
+
+  - type: textarea
+    id: as_a
+    attributes:
+      label: As a...
+      description: Who is the user or role this story is for?
+      placeholder: "e.g., As a registered user"
+    validations:
+      required: true
+
+  - type: textarea
+    id: i_want
+    attributes:
+      label: I want...
+      description: What is the feature or capability the user needs?
+      placeholder: "e.g., I want to reset my password when I forget it"
+    validations:
+      required: true
+
+  - type: textarea
+    id: so_that
+    attributes:
+      label: So that...
+      description: Why does the user want this? What is the benefit or outcome?
+      placeholder: "e.g., So that I can regain access to my account without contacting support"
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: List the conditions that must be met for the story to be considered complete.
+      placeholder: |
+        - User can request a password reset email
+        - Email contains a secure reset link
+        - Reset link expires after 24 hours
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context, notes, or references (e.g., mockups, diagrams, related issues).
+      placeholder: "Attach files, screenshots, or reference links..."
+    validations:
+      required: false

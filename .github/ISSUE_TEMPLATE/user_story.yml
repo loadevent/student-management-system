@@ -1,8 +1,10 @@
 name: 📚 User Story
 description: Describe a user story to help guide development
 title: "[User Story] "
-labels:
-  - user story
+labels: ["user story", "documentation"]
+projects: ["Jet Skill LMS"]
+assignees:
+  - loadevent
 body:
   - type: markdown
     attributes:

@@ -1,0 +1,70 @@
+name: 🧪 Test Case
+description: Document a test case including ID, objective, steps, data, and expected results
+title: "[Test Case] "
+labels:
+  - test case
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🧪 Test Case
+        Please fill in the details for this test case. Ensure all fields are clear and unambiguous.
+
+  - type: input
+    id: test-id
+    attributes:
+      label: Test Case ID
+      description: Unique identifier for the test case.
+      placeholder: "e.g., TC-001"
+    validations:
+      required: true
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: Purpose of this test case — what are you verifying?
+      placeholder: "e.g., Verify that a user can successfully log in with valid credentials"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Test Steps
+      description: Step-by-step instructions to execute the test.
+      placeholder: |
+        1. Go to the login page
+        2. Enter valid username and password
+        3. Click the 'Login' button
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-data
+    attributes:
+      label: Test Data
+      description: Data needed for the test case (e.g., credentials, file names, inputs).
+      placeholder: |
+        Username: johndoe
+        Password: Password123
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected-results
+    attributes:
+      label: Expected Results
+      description: What should happen if the test passes?
+      placeholder: "e.g., User is redirected to the dashboard and sees a welcome message."
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: Additional Notes
+      description: Any extra context, prerequisites, or related test cases.
+      placeholder: "e.g., Requires test environment access"
+    validations:
+      required: false

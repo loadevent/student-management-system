@@ -1,0 +1,12 @@
+blank_issues_enabled: true
+contact_links: []
+issue_templates:
+  - name: 🐞 Bug Report
+    description: Report an issue or unexpected behavior
+    file: defect_report.yml
+  - name: ✨ Feature Request
+    description: Suggest a new feature or improvement
+    file: feature_request.yml
+  - name: 📚 User Story
+    description: Describe a user story to help guide development
+    file: user_story.yml

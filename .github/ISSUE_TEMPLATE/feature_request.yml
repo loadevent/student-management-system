@@ -2,6 +2,9 @@ name: ✨ Feature Request
 description: Suggest a new feature or improvement
 title: "[Feature] "
 labels: ["enhancement", "feature"]
+projects: ["Jet Skill LMS"]
+assignees:
+  - loadevent
 body:
   - type: markdown
     attributes:

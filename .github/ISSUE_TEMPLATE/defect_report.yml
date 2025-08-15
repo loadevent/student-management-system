@@ -81,3 +81,16 @@ body:
         - Pre-Production
     validations:
       required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: (Eg. Functional, Performance...)
+      options:
+        - Functional
+        - Performance
+        - Usability
+        - Security
+        - Compatibility 
+    validations:
+      required: true

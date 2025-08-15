@@ -2,14 +2,15 @@ name: 🐞 Bug Report
 description: Report an issue or unexpected behavior in the system.
 title: "[Bug]: "
 labels: ["bug", "defect"]
-projects: [""]
+projects: []
 assignees:
   - loadevent
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        ## 🐞 Bug Report
+        Please fill out the details below to help us identify and fix the problem quickly.
   - type: input
     id: defect-id
     attributes:
@@ -18,19 +19,21 @@ body:
       placeholder: "e.g., Defect-001"
     validations:
       required: true
+      
   - type: input
-    id: contact
+    id: detected-by
     attributes:
       label: Contact Details
       description: How can we get in touch with you if we need more info?
       placeholder: ex. email@example.com
     validations:
       required: false
-  - type: textarea
-    id: what-happened
+      
+  - type: input
+    id: summary
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
+      label: Defect / Bug summary
+      description: Provide a short, clear summary of the bug
       placeholder: Tell us what you see!
       value: "A bug happened!"
     validations:

@@ -70,6 +70,13 @@ body:
       description: What version of our software are you running?
     validations:
       required: true
+  - type: input
+    id: test-case-id
+    attributes:
+      label: Linked Test Case ID
+      description: Which test case was executed?
+    validations:
+      required: false
   - type: dropdown
     id: environment
     attributes:

@@ -2,7 +2,7 @@ name: 🐞 Bug Report
 description: Report an issue or unexpected behavior in the system.
 title: "[Bug]: "
 labels: ["bug", "defect"]
-projects: 
+projects: [""]
 assignees:
   - loadevent
 body:

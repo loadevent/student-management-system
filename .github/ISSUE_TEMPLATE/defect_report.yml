@@ -10,6 +10,14 @@ body:
     attributes:
       value: |
         Thanks for taking the time to fill out this bug report!
+    - type: input
+    id: defect-id
+    attributes:
+      label: Defect ID
+      description: Unique identifier for the defect / bug.
+      placeholder: "e.g., Defect-001"
+    validations:
+      required: true
   - type: input
     id: contact
     attributes:

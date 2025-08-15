@@ -1,8 +1,8 @@
 name: 🐞 Bug Report
 description: Report an issue or unexpected behavior in the system.
 title: "[Bug]: "
-labels: ["bug"]
-projects: ["Jet Skill LMS"]
+labels: ["bug", "defect"]
+projects: 
 assignees:
   - loadevent
 body:

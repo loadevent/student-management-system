@@ -36,10 +36,14 @@ body:
     validations:
       required: true
   - type: textarea
-    id: description
+    id: steps-to-reproduce
     attributes:
-      label: Description
-      description: Describe the issue in detail. What is happening and what should happen instead?
-      placeholder: "Detailed steps to reproduce..."
+      label: Steps to Reproduce
+      description: List step-by-step instructions to reproduce the bug.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Scroll down to '...'
+        4. See error
     validations:
       required: true

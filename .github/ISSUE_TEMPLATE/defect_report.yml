@@ -2,7 +2,7 @@ name: 🐞 Bug Report
 description: Report an issue or unexpected behavior in the system.
 title: "[Bug]: "
 labels: ["bug", "defect"]
-projects: []
+projects: [""]
 assignees:
   - loadevent
 body:
@@ -19,7 +19,6 @@ body:
       placeholder: "e.g., Defect-001"
     validations:
       required: true
-      
   - type: input
     id: detected-by
     attributes:
@@ -28,7 +27,6 @@ body:
       placeholder: ex. email@example.com
     validations:
       required: false
-      
   - type: input
     id: summary
     attributes:
@@ -37,7 +35,6 @@ body:
       placeholder: "e.g., App crashes when clicking the save button"
     validations:
       required: true
-
   - type: textarea
     id: description
     attributes:
@@ -46,7 +43,6 @@ body:
       placeholder: "Detailed steps to reproduce..."
     validations:
       required: true
-
   - type: textarea
     id: steps-to-reproduce
     attributes:
@@ -59,8 +55,6 @@ body:
         4. See error
     validations:
       required: true
-
-
   - type: textarea
     id: expected
     attributes:
@@ -69,7 +63,6 @@ body:
       placeholder: "It should..."
     validations:
       required: true
-      
   - type: dropdown
     id: version
     attributes:
@@ -81,7 +74,6 @@ body:
       default: 0
     validations:
       required: true
-      
   - type: textarea
     id: actual
     attributes:
@@ -90,7 +82,6 @@ body:
       placeholder: "Instead, it..."
     validations:
       required: true
-
   - type: dropdown
     id: environment
     attributes:
@@ -102,7 +93,6 @@ body:
         - Pre-Production
     validations:
       required: true
-
   - type: dropdown
     id: category
     attributes:
@@ -116,7 +106,6 @@ body:
         - Compatibility 
     validations:
       required: true
-
  - type: dropdown
     id: severity
     attributes:
@@ -129,7 +118,6 @@ body:
         - Critical
     validations:
       required: true
-    
   - type: dropdown
     id: browsers
     attributes:

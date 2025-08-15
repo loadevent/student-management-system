@@ -35,3 +35,11 @@ body:
       placeholder: "e.g., App crashes when clicking the save button"
     validations:
       required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the issue in detail. What is happening and what should happen instead?
+      placeholder: "Detailed steps to reproduce..."
+    validations:
+      required: true

@@ -44,4 +44,4 @@ body:
       description: Explain the problem this feature solves or the value it adds.
       placeholder: "It would help because..."
     validations:
-      required: true
+      required: false

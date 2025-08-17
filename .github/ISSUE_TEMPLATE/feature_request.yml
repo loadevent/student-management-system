@@ -11,7 +11,14 @@ body:
       value: |
         ## ✨ Feature Request
         Please fill out the details below to help us understand and prioritize your request.
-
+  - type: input
+    id: feature-id
+    attributes:
+      label: Feature ID
+      description: Unique identifier for the feature.
+      placeholder: "e.g., Feature-001"
+    validations:
+      required: true
   - type: input
     id: summary
     attributes:
@@ -38,21 +45,3 @@ body:
       placeholder: "It would help because..."
     validations:
       required: true
-
-  - type: textarea
-    id: alternatives
-    attributes:
-      label: Alternative Solutions
-      description: List any alternative solutions or workarounds you've considered.
-      placeholder: "I could also..."
-    validations:
-      required: false
-
-  - type: textarea
-    id: additional-context
-    attributes:
-      label: Additional Context
-      description: Add any other context, mockups, or screenshots about the feature request here.
-      placeholder: "Screenshots, designs, or related links..."
-    validations:
-      required: false

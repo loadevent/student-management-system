@@ -2,7 +2,7 @@ name: 📚 User Story
 description: Describe a user story to help guide development
 title: "[User Story] "
 labels: ["user story", "documentation"]
-projects: ["Jet Skill LMS"]
+projects: ["loadevent/18"]
 assignees:
   - loadevent
 body:

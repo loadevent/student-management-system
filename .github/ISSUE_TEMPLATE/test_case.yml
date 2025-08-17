@@ -2,7 +2,7 @@ name: 🧪 Test Case
 description: Document a test case including ID, objective, steps, data, and expected results
 title: "[Test Case] "
 labels: ["test case"]
-projects: ["Jet Skill LMS"]
+projects: ["loadevent/18"]
 assignees:
   - loadevent
 body:

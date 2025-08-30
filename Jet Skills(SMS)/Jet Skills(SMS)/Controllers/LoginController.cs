@@ -1,19 +1,48 @@
 ﻿using Jet_Skills_SMS_.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Jet_Skills_SMS_.Controllers
 {
     public class LoginController : Controller
     {
+        private readonly JetSkillsDbContext _dbContext;
+        private List<UserType> userTypes;
+
+        public LoginController(JetSkillsDbContext context) {
+            _dbContext = context;
+            userTypes = _dbContext.UserTypes.ToList();
+
+        }
+        [HttpGet]
         public IActionResult Login()
         {
+            
+            ViewBag.userTypes = new SelectList(userTypes, "UserTypeId", "Description");
+
             return View();
         }
         [HttpPost]
-        public IActionResult Login(String username, String password)
+        public IActionResult Login(IFormCollection collection)
         {
-            return View();
-        }//0877301166
+           
+            ViewBag.userTypes = new SelectList(userTypes, "UserTypeId", "Description");
+
+
+            int username = Convert.ToInt32(collection["StudentId"]);
+            string? password = collection["Password"];
+            int userType = Convert.ToInt32(collection["userType"]);
+
+            var user = _dbContext.Students.Where(u => u.StudentId == username && u.Password == password && u.UserType == userType).FirstOrDefault();
+
+            if (user == null)
+            {
+                ViewBag.error = "Invalid Login Credentials";
+                return View();
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
 
 
 

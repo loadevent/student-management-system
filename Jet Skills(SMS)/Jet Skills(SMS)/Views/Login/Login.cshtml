@@ -1,66 +1,39 @@
-﻿@{
+﻿@model Jet_Skills_SMS_.Models.Student
+
+@{
     ViewData["Title"] = "Login";
     Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
 
-<div class="login-wrap">
-	<div class="login-html">
-		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
-		<div class="login-form">
-			<div class="sign-in-htm">
-				<form id="login-form" asp-controller="Login" asp-action="Login" method="post">
-					<div class="group">
-						<label for="user" class="label">Username</label>
-						<input id="user" type="text" class="input" name="username">
-					</div>
-					<div class="group">
-						<label for="pass" class="label">Password</label>
-						<input id="pass" type="password" class="input" data-type="password" name="password">
-					</div>
-					<div class="group">
-						<input id="check" type="checkbox" class="check" checked>
-						<label for="check"><span class="icon"></span> Keep me Signed in</label>
-					</div>
-					<div class="group">
-						<input type="submit" class="button" value="Sign In">
-					</div>
-					<div class="hr"></div>
-					<div class="foot-lnk">
-						<a href="#forgot">Forgot Password?</a>
-					</div>
-				</form>
-			</div>
 
-		<!-- #region sign up -->
-			@* <div class="sign-up-htm">
-				<div class="group">
-					<label for="user" class="label">Username</label>
-					<input id="user" type="text" class="input" name="username">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Repeat Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Email Address</label>
-					<input id="pass" type="text" class="input">
-				</div>
-				<div class="group">
-					<input type="submit" class="button" value="Sign Up">
-				</div>
-				<div class="hr"></div>
-				<div class="foot-lnk">
-					<label for="tab-1">Already Member?</label>
-				</div>
-			</div> *@
+<div class="login-container">
+	<h2>Student Management System - Login</h2>
 
-	<!-- #endregion -->
-			
+	@if (ViewBag.Error != null)
+	{
+		<div class="error">@ViewBag.Error</div>
+	}
+
+	@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+	{
+		<div class="form-group">
+			@Html.LabelFor(m => m.StudentId)
+			@Html.TextBoxFor(m => m.StudentId, new { @class = "form-control", placeholder = "Enter username" })
 		</div>
-	</div>
+
+		<div class="form-group">
+			@Html.LabelFor(m => m.Password)
+			@Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Enter password" })
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(m => m.UserType)
+			@Html.DropDownList("userType",
+			(SelectList)ViewBag.userTypes,
+				"Select user type",
+				new { @class = "form-control"})
+		</div>
+
+	<button type="submit" class="btn-login">Login</button>
+		}
 </div>

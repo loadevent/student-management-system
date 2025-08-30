@@ -28,8 +28,8 @@
 
 		<div class="form-group">
 			@Html.LabelFor(m => m.UserType)
-			@Html.DropDownListFor(m => m.UserType,
-			new SelectList(new[]{1, 2, 3}),
+			@Html.DropDownList("userType",
+			(SelectList)ViewBag.userTypes,
 				"Select user type",
 				new { @class = "form-control"})
 		</div>

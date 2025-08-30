@@ -1,27 +1,39 @@
 ﻿using Jet_Skills_SMS_.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Jet_Skills_SMS_.Controllers
 {
     public class LoginController : Controller
     {
-        JetSkillsDbContext db = new JetSkillsDbContext();
-        public LoginController() { }
+        private readonly JetSkillsDbContext _dbContext;
+        private List<UserType> userTypes;
+
+        public LoginController(JetSkillsDbContext context) {
+            _dbContext = context;
+            userTypes = _dbContext.UserTypes.ToList();
+
+        }
+        [HttpGet]
         public IActionResult Login()
         {
+            
+            ViewBag.userTypes = new SelectList(userTypes, "UserTypeId", "Description");
+
             return View();
         }
         [HttpPost]
         public IActionResult Login(IFormCollection collection)
         {
-            //List<UserType> userTypes = db.UserTypes.ToList();
-            //ViewBag.userTypes = userTypes;
+           
+            ViewBag.userTypes = new SelectList(userTypes, "UserTypeId", "Description");
 
-            int username = Convert.ToInt32(collection["username"]);
-            string password = collection["password"];
+
+            int username = Convert.ToInt32(collection["StudentId"]);
+            string? password = collection["Password"];
             int userType = Convert.ToInt32(collection["userType"]);
 
-            var user = db.Students.Where(u => u.StudentId == username && u.Password == password && u.UserType == 3).FirstOrDefault();
+            var user = _dbContext.Students.Where(u => u.StudentId == username && u.Password == password && u.UserType == userType).FirstOrDefault();
 
             if (user == null)
             {

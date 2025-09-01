@@ -9,11 +9,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<JetSkillsDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
 
-
-    
-
 var app = builder.Build();
-
 
 
 // Configure the HTTP request pipeline.

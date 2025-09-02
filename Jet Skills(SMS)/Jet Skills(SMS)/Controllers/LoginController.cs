@@ -1,4 +1,5 @@
 ﻿using Jet_Skills_SMS_.Models;
+using Jet_Skills_SMS_.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 

@@ -1,4 +1,4 @@
-using Jet_Skills_SMS_.Models;
+using Jet_Skills_SMS_.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -23,4 +23,7 @@ public partial class UserType
 
     [InverseProperty("UserTypeNavigation")]
     public virtual ICollection<Student> Students { get; set; } = new List<Student>();
+    
+    [InverseProperty("UserTypeNavigation")]
+    public virtual ICollection<Admin> Admins { get; set; } = new List<Admin>();
 }

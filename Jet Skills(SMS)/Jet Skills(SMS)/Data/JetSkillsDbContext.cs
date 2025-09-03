@@ -31,6 +31,9 @@ public partial class JetSkillsDbContext : DbContext
     public virtual DbSet<Student> Students { get; set; }
 
     public virtual DbSet<UserType> UserTypes { get; set; }
+    public virtual DbSet<Admin> Admins { get; set; }
+
+
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("Name=ConnectionStrings:DefaultConnection");

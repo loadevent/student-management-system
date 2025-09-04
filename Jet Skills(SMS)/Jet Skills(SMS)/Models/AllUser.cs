@@ -6,42 +6,33 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Jet_Skills_SMS_.Models;
 
-[Index("UserType", Name = "IX_Admins_user_type")]
-public partial class Admin
+[PrimaryKey("UserId", "Email")]
+public partial class AllUser
 {
     [Key]
-    [Column("admin_id")]
-    public int AdminId { get; set; }
+    [Column("user_id")]
+    public int UserId { get; set; }
 
-    [Column("first_name")]
-    [StringLength(50)]
-    [Unicode(false)]
-    public string? FirstName { get; set; }
-
-    [Column("last_name")]
-    [StringLength(50)]
-    [Unicode(false)]
-    public string? LastName { get; set; }
-
+    [Key]
     [Column("email")]
-    [StringLength(100)]
+    [StringLength(50)]
     [Unicode(false)]
     public string Email { get; set; } = null!;
+
+    [Column("phone")]
+    [StringLength(20)]
+    [Unicode(false)]
+    public string? Phone { get; set; }
 
     [Column("password")]
     [StringLength(50)]
     [Unicode(false)]
     public string? Password { get; set; }
 
-    [Column("phone_number")]
-    [StringLength(20)]
-    [Unicode(false)]
-    public string? PhoneNumber { get; set; }
-
     [Column("user_type")]
     public int? UserType { get; set; }
 
     [ForeignKey("UserType")]
-    [InverseProperty("Admins")]
+    [InverseProperty("AllUsers")]
     public virtual UserType? UserTypeNavigation { get; set; }
 }

@@ -16,6 +16,10 @@ public partial class JetSkillsDbContext : DbContext
     {
     }
 
+    public virtual DbSet<Admin> Admins { get; set; }
+
+    public virtual DbSet<AllUser> AllUsers { get; set; }
+
     public virtual DbSet<Course> Courses { get; set; }
 
     public virtual DbSet<Enrollment> Enrollments { get; set; }
@@ -31,15 +35,26 @@ public partial class JetSkillsDbContext : DbContext
     public virtual DbSet<Student> Students { get; set; }
 
     public virtual DbSet<UserType> UserTypes { get; set; }
-    public virtual DbSet<Admin> Admins { get; set; }
-
-
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("Name=ConnectionStrings:DefaultConnection");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Admin>(entity =>
+        {
+            entity.HasKey(e => e.AdminId).HasName("PK_Admins_1");
+        });
+
+        modelBuilder.Entity<AllUser>(entity =>
+        {
+            entity.HasKey(e => new { e.UserId, e.Email }).HasName("PK_Users");
+
+            entity.HasOne(d => d.UserTypeNavigation).WithMany(p => p.AllUsers)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK_Users_UserType");
+        });
+
         modelBuilder.Entity<Course>(entity =>
         {
             entity.HasKey(e => e.CourseId).HasName("PK__Courses__8F1EF7AE1FFFE39B");

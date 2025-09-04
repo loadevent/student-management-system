@@ -19,11 +19,14 @@ public partial class UserType
     public string? Description { get; set; }
 
     [InverseProperty("UserTypeNavigation")]
+    public virtual ICollection<Admin> Admins { get; set; } = new List<Admin>();
+
+    [InverseProperty("UserTypeNavigation")]
+    public virtual ICollection<AllUser> AllUsers { get; set; } = new List<AllUser>();
+
+    [InverseProperty("UserTypeNavigation")]
     public virtual ICollection<Lecturer> Lecturers { get; set; } = new List<Lecturer>();
 
     [InverseProperty("UserTypeNavigation")]
     public virtual ICollection<Student> Students { get; set; } = new List<Student>();
-    
-    [InverseProperty("UserTypeNavigation")]
-    public virtual ICollection<Admin> Admins { get; set; } = new List<Admin>();
 }

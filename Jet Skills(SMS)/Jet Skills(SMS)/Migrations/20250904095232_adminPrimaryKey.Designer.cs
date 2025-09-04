@@ -4,6 +4,7 @@ using Jet_Skills_SMS_.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Jet_Skills_SMS_.Migrations
 {
     [DbContext(typeof(JetSkillsDbContext))]
-    partial class JetSkillsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250904095232_adminPrimaryKey")]
+    partial class adminPrimaryKey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

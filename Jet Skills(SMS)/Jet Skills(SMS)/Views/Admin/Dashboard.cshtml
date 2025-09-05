@@ -1,0 +1,108 @@
+﻿
+@{
+    //ViewData["Title"] = "Dashboard";
+    ViewBag.Title = "Admin Dashboard";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container mt-4">
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h2>Welcome, @ViewBag.yourName</h2>
+        </div>
+
+        <div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card shadow-sm mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Quick Stats</h5>
+                            <p class="card-text">You can place some overview charts or statistics here.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card shadow-sm mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Notifications</h5>
+                            <p class="card-text">Any alerts or important updates for admin users.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+
+    <div class="row">
+        <!-- Calendar -->
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm text-center">
+                <div class="card-body">
+                    <i class="bi bi-calendar3 display-4 text-primary"></i>
+                    <h5 class="card-title mt-2">Calendar</h5>
+                    <a asp-controller="Admin" asp-action="Calendar" class="btn btn-primary">Open</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Faculty -->
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm text-center">
+                <div class="card-body">
+                    <i class="bi bi-building display-4 text-success"></i>
+                    <h5 class="card-title mt-2">Faculty</h5>
+                    <a asp-controller="Faculty" asp-action="Index" class="btn btn-success">Manage</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Students -->
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm text-center">
+                <div class="card-body">
+                    <i class="bi bi-people display-4 text-warning"></i>
+                    <h5 class="card-title mt-2">Students</h5>
+                    <a asp-controller="Student" asp-action="Index" class="btn btn-warning">Manage</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lecturers -->
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm text-center">
+                <div class="card-body">
+                    <i class="bi bi-person-badge display-4 text-info"></i>
+                    <h5 class="card-title mt-2">Lecturers</h5>
+                    <a asp-controller="Lecturer" asp-action="Index" class="btn btn-info">Manage</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timetable -->
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm text-center">
+                <div class="card-body">
+                    <i class="bi bi-table display-4 text-danger"></i>
+                    <h5 class="card-title mt-2">Timetable</h5>
+                    <a asp-controller="Timetable" asp-action="Index" class="btn btn-danger">View</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Class List -->
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm text-center">
+                <div class="card-body">
+                    <i class="bi bi-list-check display-4 text-secondary"></i>
+                    <h5 class="card-title mt-2">Class List</h5>
+                    <a asp-controller="Class" asp-action="Index" class="btn btn-secondary">View</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </main>
+</div>
+

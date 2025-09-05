@@ -26,15 +26,15 @@ namespace Jet_Skills_SMS_.Controllers
         [HttpPost]
         public IActionResult Login(IFormCollection collection)
         {
-           
             ViewBag.userTypes = new SelectList(userTypes, "UserTypeId", "Description");
 
-
-            int username = Convert.ToInt32(collection["StudentId"]);
+            int username = Convert.ToInt32(collection["UserId"]);
             string? password = collection["Password"];
             int userType = Convert.ToInt32(collection["userType"]);
 
-            var user = _dbContext.Students.Where(u => u.StudentId == username && u.Password == password && u.UserType == userType).FirstOrDefault();
+            AllUser? user = _dbContext.AllUsers
+                .Where(u => u.UserId == username && u.Password == password && u.UserType == userType)
+                .FirstOrDefault();
 
             if (user == null)
             {
@@ -42,7 +42,8 @@ namespace Jet_Skills_SMS_.Controllers
                 return View();
             }
 
-            return RedirectToAction("Index", "Home");
+            //ViewBag.userType = userType;
+            return RedirectToAction("Index", "Home", user);
         }
 
 

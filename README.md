@@ -1,4 +1,4 @@
-# System Requirements Specification (SRS)
+# System Requireme
 
 ##  Introduction
 The purpose of this document is to outline the software requirements for the Student
